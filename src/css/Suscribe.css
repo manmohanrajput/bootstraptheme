@@ -1,0 +1,82 @@
+#main-page{
+    background-color: aliceblue;
+}
+.contact-form-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  .para{
+    color: black;
+  }
+  .para1{
+    color: black;
+    font-family: oblique;
+  }
+  .butttt{
+    background-color: #ff4d00;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #ff4d00;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-left: none; 
+    cursor: pointer;
+    border-radius: 0 10px 10px 0;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
