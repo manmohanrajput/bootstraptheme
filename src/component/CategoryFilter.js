@@ -1,34 +1,34 @@
-import React from 'react';
-import "../css/Filter.css";
-import { IoMdArrowDropright } from "react-icons/io";
+import React,{useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCategory } from '../services/actions';
+import "../css/Filter.css";
 
-const categories = ['All', 'Admin&Dash', 'Landing Pages','Bussiness&Corporate','Portfolio&Resume','Ecommerce'];
 
-const CategoryFilter = () => {
+const CategoryDropdown = () => {
   const dispatch = useDispatch();
-  const selectedCategory = useSelector((state) => state.category);
+  const category = useSelector((state) => state.category);
+
+  const handleChange = (event) => {
+    dispatch(setCategory(event.target.value));
+  };
+
 
   return (
-    <div className="dropdown mt-4 mx-4" >
-    <h6>Category</h6>
-    <button className="dropdown-button">
-      {selectedCategory}<IoMdArrowDropright className="icon" />
-    </button>
-    <div className="dropdown-content">
-      {categories.map((category) => (
-        <div
-          key={category}
-          className="dropdown-item"
-          onClick={() => dispatch(setCategory(category))}
-        >
-          {category}
-        </div>
-      ))}
+    <div className='mt-5 mx-4 custom-select'>
+        <h6>Category</h6>
+
+      <select className='' value={category} onChange={handleChange}>
+      <option value="">All</option>
+      <option value="admin">Admin&Dash</option>
+      <option value="landing">Landing Pages</option>
+      <option value="bussiness">Bussiness&Corporate</option>
+      <option value="portfolio">Portfolio&Resume</option>
+      <option value="ecommerce">Ecommerce</option>
+    
+    </select>
     </div>
-  </div>
+    
   );
 };
 
-export default CategoryFilter;
+export default CategoryDropdown;

@@ -1,31 +1,31 @@
-// src/components/ImageList.js
-
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { FaCloudDownloadAlt } from "react-icons/fa";
 import '../css/Image.css';
 
-const ImageList = () => {
-  const images = useSelector((state) => state.images);
+const ImageDisplay = () => {
   const category = useSelector((state) => state.category);
+  const images = useSelector((state) => state.images);
 
-  const filteredImages = category === 'All'
-    ? images
-    : images.filter((image) => image.category === category);
+  const filteredImages = images.filter((image) => {
+    if (category === '') return true; 
+    return image.category === category;
+  });
 
   return (
-    <div className="image-list">
-      {filteredImages.map((image) => (
-        <div key={image.id} className="card">
-          <img src={image.src} alt={image.alt} className="card-img" />
-          <div className="card-body">
-          <p className="card-price">{image.text}</p>
-            <p className="card-price"><FaCloudDownloadAlt />{image.download}</p>
+    <div className="image-display-container">
+      {filteredImages.length > 0 ? (
+        filteredImages.map((image) => (
+          <div key={image.id} className="image-card">
+            <img src={image.avatar} alt={`${image.first_name} ${image.last_name}`} />
+            <p>{image.first_name} {image.last_name}</p>
+            <p>{image.email}</p>
           </div>
-        </div>
-      ))}
+        ))
+      ) : (
+        <p>No images to display</p>
+      )}
     </div>
   );
 };
 
-export default ImageList;
+export default ImageDisplay;

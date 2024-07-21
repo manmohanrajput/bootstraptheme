@@ -1,59 +1,36 @@
-/* src/css/CategoryFilterDropdown.css */
+.category-dropdown {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+  /* For Firefox */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
 
-  }
-  
-  .dropdown-button {
-    background-color:#ffffff;
-    color: rgb(0, 0, 0);
-    padding: 16px;
-    font-size: 16px;
-    /* width: 100px; */
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-    /* box-shadow: 4px 8px 4px  #484848; */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-  
-   .dropdown-button:focus {
-    background-color: #f0f0f0;
-    cursor: pointer;
+.category-dropdown:hover {
+  border-color: #888;
+}
 
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    cursor: pointer;
+.category-dropdown:focus {
+  outline: none;
+  border-color: #007bff;
+}
 
-  }
-  
-  .dropdown-content .dropdown-item {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content .dropdown-item:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
+.category-dropdown:focus-visible {
+  outline: none;
+}
 
-  }
-  .card-price .icon {
-    margin-right: 45px; 
-
-  }
-  
+.category-dropdown option {
+  padding: 10px;
+}
+.custom-select select{
+  padding: 10px;
+  border: none;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
